@@ -10,7 +10,7 @@ The following program simulates 3 different types of sorting algorithms:
 - Reverse Bubble Sort (Method 2)
 - Merge Sort (Method 3)
 After sorting the given list (read from a file), the program outputs the amount of time
-it took for the sort to finish. The given list has a size between 2^4 and 2^23, inclusive.
+it took for the sort to finish. The given list has a size between 2^4 and 2^24, inclusive.
 */
 
 import java.io.File;
@@ -22,7 +22,7 @@ public class IntegerSorter implements Sorter{
 
     public static void main(String[] args) throws Exception{
         int sortNum = 1; //CHANGE SORT METHOD HERE
-        File file = new File("2power5.txt");
+        File file = new File("COPY FILE PATH HERE");
         Scanner SCAN = new Scanner(file);
         int values = 0; //Used to find size of the file
         while (SCAN.hasNextInt()){
@@ -40,7 +40,8 @@ public class IntegerSorter implements Sorter{
         long start = System.nanoTime();
         IS.sort(sortNum);
         long end = System.nanoTime();
-        System.out.println("TIME: " + (end - start) / 1e9 + " seconds");
+        double nano = 1000000000;
+        System.out.println("TIME: " + (end - start) / nano + " seconds");
         //Shows the time it took to compile (in seconds)
         //System.out.println(IS.toString());
     }
